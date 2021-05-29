@@ -36,10 +36,20 @@ def getCategoryListWithProduct():
 
     categoryModels = []
     for category in categories:
+        print(category)
         products = []
         productDbs = category.product_set.all()
+        print(productDbs)
         for product in productDbs:
-            products.append(ProductModel(sku=product.sku, name=product.name, price= product.price, thumbUrl=product.thumbUrl))
-        categoryModels.append(CategoryModel(name= category.name, colorCode= category.colorCode, products= products))
+            print(product)
+            productModel = ProductModel(sku=product.sku, name=product.name, price= product.price, thumbUrl=product.thumbUrl)
+            products.append(productModel)
+            print(productModel)
+        categoryModel = CategoryModel(name= category.name, colorCode= category.colorCode, products= products)
+        categoryModels.append(categoryModel)
+        print(categoryModel)
+        print(dir(categoryModel))
 
+    print(categoryModels)
+    print(dir(categoryModels))
     return categoryModels

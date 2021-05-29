@@ -15,7 +15,7 @@ class WrapResponse:
 
 
 def obj_to_dict(obj):
-
+    print("obj_to_dict" + str(obj))
     if isinstance(obj, (datetime)):
         return '{:%Y-%m-%d %H:%M:%S}'.format(obj)
 
