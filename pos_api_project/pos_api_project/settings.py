@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b&t2rzrg$ybi#2s$+3l((6mpsb2ests@^hvv6u(8-l23w+-ut+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "pos.tinyflutterteam.com"
+]
 
 
 # Application definition
