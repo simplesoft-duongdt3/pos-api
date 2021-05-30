@@ -18,14 +18,16 @@ def convertDate(strDate: str):
 
 
 class ProductModel:
-    def __init__(self, sku, name, price, thumbUrl):
+    def __init__(self, id, sku, name, price, thumbUrl):
+        self.id = id
         self.sku = sku
         self.name = name
         self.price = price
         self.thumbUrl = thumbUrl
 
 class CategoryModel():
-    def __init__(self, name, colorCode, products):
+    def __init__(self, id, name, colorCode, products):
+        self.id = id
         self.name = name
         self.colorCode = colorCode
         self.products = products
@@ -42,10 +44,10 @@ def getCategoryListWithProduct():
         print(productDbs)
         for product in productDbs:
             print(product)
-            productModel = ProductModel(sku=product.sku, name=product.name, price= product.price, thumbUrl=product.thumbUrl)
+            productModel = ProductModel(id= product.id, sku=product.sku, name=product.name, price= product.price, thumbUrl=product.thumbUrl)
             products.append(productModel)
             print(productModel)
-        categoryModel = CategoryModel(name= category.name, colorCode= category.colorCode, products= products)
+        categoryModel = CategoryModel(id= category.id, name= category.name, colorCode= category.colorCode, products= products)
         categoryModels.append(categoryModel)
         print(categoryModel)
         print(dir(categoryModel))
